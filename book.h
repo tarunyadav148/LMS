@@ -1,55 +1,22 @@
 #ifndef BOOK_H
 #define BOOK_H
 
-#include<iostream>
 #include<string>
-using namespace std;
+
 class book{
-int sno;
-string bname;
-char issue;
-int receive;
-public:
-book()
-{
-sno=0;
-bname="Not available";
-issue='N';
-}
-void binput()
-{
-cout<<"Enter book sno.:";
-cin>>sno;
-cout<<"Enter book name:";
-getline(cin,bname);
-}
-void getreceive(int addmno)
-{
-receive=addmno;
-}
-int putreceive()
-{
-return receive;
-}
-void bdisplay()
-{
-cout<<"---Details of book---"<<endl;
-cout<<"Name:"<<bname<<endl;
-cout<<"S.No.:"<<sno<<endl;
-cout<<"ISSUE:"<<issue<<endl;
-}
-void getissue(char c)
-{
-issue=c;
-}
-char putissue()
-{
-return issue;
-}
-int getsno()
-{
-return sno;
-}
+    int sno;
+    std::string bname;
+    char issue;
+    int receive;
+    public:
+    book();
+    void binput();
+    void getreceive(int addmno);
+    int putreceive();
+    void bdisplay();
+    void getissue(char c);
+    char putissue();
+    int getsno();
 };
 
 #endif

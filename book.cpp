@@ -1,53 +1,55 @@
+#include"book.h"
 #include<iostream>
 #include<string>
 using namespace std;
 
 
-class book{
-int sno;
-string bname;
-char issue;
-int receive;
-public:
-book()
+
+book::book()
 {
-sno=0;
-bname="Not available";
-issue='N';
+    sno=0;
+    bname="Not available";
+    issue='N';
 }
-void binput()
+
+void book::binput()
 {
-cout<<"Enter book sno.:";
-cin>>sno;
-cout<<"Enter book name:";
-getline(cin,bname);
+    cout<<"Enter book sno.:";
+    cin>>sno;
+    cout<<"Enter book name:";
+    getline(cin,bname);
 }
-void getreceive(int addmno)
+
+void book::getreceive(int addmno)
 {
-receive=addmno;
+    receive=addmno;
 }
-int putreceive()
+
+int book::putreceive()
 {
-return receive;
+    return receive;
 }
-void bdisplay()
+
+void book::bdisplay()
 {
-cout<<"---Details of book---"<<endl;
-cout<<"Name:"<<bname<<endl;
-cout<<"S.No.:"<<sno<<endl;
-cout<<"ISSUE:"<<issue<<endl;
+    cout<<"---Details of book---"<<endl;
+    cout<<"Name:"<<bname<<endl;
+    cout<<"S.No.:"<<sno<<endl;
+    cout<<"ISSUE:"<<issue<<endl;
 }
-void getissue(char c)
+
+void book::getissue(char c)
 {
-issue=c;
+    issue=c;
 }
-char putissue()
+
+char book::putissue()
 {
-return issue;
+    return issue;
 }
-int getsno()
+
+int book::getsno()
 {
-return sno;
+    return sno;
 }
-};
 
