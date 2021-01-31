@@ -1,9 +1,11 @@
 #include<iostream>
 #include<fstream>
 #include<string>
+#include"interface.h"
+#include"student.h"
+#include"book.h"
 using namespace std;
 
-void interface();
 void bgetdata();
 void sgetdata();
 void bookissue();

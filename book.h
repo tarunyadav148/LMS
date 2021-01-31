@@ -1,8 +1,6 @@
 #include<iostream>
 #include<string>
 using namespace std;
-
-
 class book{
 int sno;
 string bname;

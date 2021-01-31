@@ -1,6 +1,5 @@
 #include<iostream>
-#include<fstream>
-#include<string>
+#include"methods.h"
 using namespace std;
 
 void interface()
