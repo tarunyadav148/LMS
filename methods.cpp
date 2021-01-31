@@ -1,9 +1,9 @@
-#include<iostream>
-#include<fstream>
-#include<string>
 #include"interface.h"
 #include"student.h"
 #include"book.h"
+#include<iostream>
+#include<fstream>
+#include<string>
 using namespace std;
 
 void sgetdata()
