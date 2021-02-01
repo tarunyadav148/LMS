@@ -1,6 +1,8 @@
 #include"book.h"
 #include<iostream>
 #include<string>
+#include<ios>
+#include<limits>
 using namespace std;
 
 
@@ -17,6 +19,7 @@ void book::binput()
     cout<<"Enter book sno.:";
     cin>>sno;
     cout<<"Enter book name:";
+    cin.ignore(numeric_limits<streamsize>::max(),'\n');
     getline(cin,bname);
 }
 

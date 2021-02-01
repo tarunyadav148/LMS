@@ -1,6 +1,8 @@
 #include"student.h"
 #include<iostream>
 #include<string>
+#include<ios>
+#include<limits>
 using namespace std;
 
 
@@ -9,6 +11,7 @@ void student::sinput()
     cout<<"Enter Addmission No.:";
     cin>>addmno;
     cout<<"Enter Name of student:";
+    cin.ignore(numeric_limits<streamsize>::max(),'\n');
     getline(cin,sname);
     cout<<"Enter class of student:";
     cin>>Class;

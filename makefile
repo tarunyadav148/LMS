@@ -17,4 +17,4 @@ methods.o: methods.cpp
 	g++ -c methods.cpp
 
 clean:
-	rm *.o LMS
+	rm *.o LMS *.dat
