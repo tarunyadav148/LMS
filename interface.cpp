@@ -4,7 +4,7 @@ using namespace std;
 
 void interface()
 {
-    system("cls");
+    if(system("clear")) system("cls");
 
     cout<<"\t\tLibrary Management System"<<endl;
     cout<<"\t\tKendriya Vidyalaya Aliganj Lucknow"<<endl;
