@@ -6,7 +6,6 @@ void interface()
     if(system("clear")) system("cls");
 
     std::cout<<"\t\tLibrary Management System"<<std::endl;
-    std::cout<<"\t\tKendriya Vidyalaya Aliganj Lucknow"<<std::endl;
     
     int choice;
 
