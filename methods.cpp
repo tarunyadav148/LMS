@@ -54,8 +54,8 @@ void bookissue()
     book b;
     std::cout<<"Enter Student Addmission No.:"<<std::endl;
     std::cin>>n1;
-    cout<<"Enter Serial NO. of Book:"<<endl;
-    cin>>n2;
+    std::cout<<"Enter Serial NO. of Book:"<<std::endl;
+    std::cin>>n2;
     std::fstream fin,fout;
     fin.open("Book.dat",std::ios::binary|std::ios::in|std::ios::out);
     fin.read((char*)&b,sizeof(b));
@@ -69,7 +69,7 @@ void bookissue()
         b.bdisplay();
         fin.seekg(-(int)sizeof(b),std::ios::cur);;
         fin.write((char*)&b,sizeof(b));
-        cout<<"Book is issued to student:"<<endl;
+        std::cout<<"Book is issued to student:"<<std::endl;
         fout.open("Student.dat",std::ios::binary|std::ios::in);
         fout.read((char*)&s,sizeof(s));
 
@@ -121,7 +121,7 @@ void bookreturn()
     int back;
     std::cout<<"1:Continue"<<std::endl;
     std::cout<<"0:Back to main menu";
-    cin>>back;
+    std::cin>>back;
     if(back==0){
         interface();
     }
@@ -149,7 +149,7 @@ void sstatus()
 
     s.sdisplay();
     fout.close();
-    cout<<"Details of book issued:"<<endl;
+    std::cout<<"Details of book issued:"<<std::endl;
     std::fstream fin;
     fin.open("Book.dat",std::ios::binary|std::ios::in);
     fin.read((char*)&b,sizeof(b));
@@ -194,7 +194,7 @@ void bstatus()
     }
 
     b.bdisplay();
-    cout<<"The book is issued to:"<<std::endl;
+    std::cout<<"The book is issued to:"<<std::endl;
     fin.close();
     fin.open("Student.dat",std::ios::binary|std::ios::in);
     fin.read((char*)&s,sizeof(s));
