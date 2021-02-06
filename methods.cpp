@@ -4,20 +4,19 @@
 #include<iostream>
 #include<fstream>
 #include<string>
-using namespace std;
 
 void sgetdata()
 {
-    fstream fout;
+    std::fstream fout;
     student s;
     s.sinput();
-    fout.open("Student.dat",ios::binary|ios::app);
+    fout.open("Student.dat",std::ios::binary|std::ios::app);
     fout.write((char*)&s,sizeof(s));
     fout.close();
     int back;
-    cout<<"1:Continue"<<endl;
-    cout<<"0:Back to main menu";
-    cin>>back;
+    std::cout<<"1:Continue"<<std::endl;
+    std::cout<<"0:Back to main menu";
+    std::cin>>back;
     if(back==0){
         interface();
     }
@@ -28,18 +27,18 @@ void sgetdata()
 
 void bgetdata()
 {
-    fstream fout;
+    std::fstream fout;
     book b;
     b.binput();
-    fout.open("Book.dat",ios::binary|ios::app);
+    fout.open("Book.dat",std::ios::binary|std::ios::app);
     fout.write((char*)&b,sizeof(b));
-    cout<<"Book is register"<<endl;
+    std::cout<<"Book is register"<<std::endl;
     fout.close();
     fout.close();
     int back;
-    cout<<"1:Continue"<<endl;
-    cout<<"0:Back to main menu";
-    cin>>back;
+    std::cout<<"1:Continue"<<std::endl;
+    std::cout<<"0:Back to main menu";
+    std::cin>>back;
     if(back==0){
         interface();
     }
@@ -53,12 +52,12 @@ void bookissue()
     int n1,n2;
     student s;
     book b;
-    cout<<"Enter Student Addmission No.:"<<endl;
-    cin>>n1;
+    std::cout<<"Enter Student Addmission No.:"<<std::endl;
+    std::cin>>n1;
     cout<<"Enter Serial NO. of Book:"<<endl;
     cin>>n2;
-    fstream fin,fout;
-    fin.open("Book.dat",ios::binary|ios::in|ios::out);
+    std::fstream fin,fout;
+    fin.open("Book.dat",std::ios::binary|std::ios::in|std::ios::out);
     fin.read((char*)&b,sizeof(b));
 
     while(b.getsno()!=n2)
@@ -68,10 +67,10 @@ void bookissue()
         b.getreceive(n1);
         b.getissue('Y');
         b.bdisplay();
-        fin.seekg(-(int)sizeof(b),ios::cur);;
+        fin.seekg(-(int)sizeof(b),std::ios::cur);;
         fin.write((char*)&b,sizeof(b));
         cout<<"Book is issued to student:"<<endl;
-        fout.open("Student.dat",ios::binary|ios::in);
+        fout.open("Student.dat",std::ios::binary|std::ios::in);
         fout.read((char*)&s,sizeof(s));
 
         while(fout)
@@ -85,9 +84,9 @@ void bookissue()
         fout.close();
         fin.close();
         int back;
-        cout<<"1:Continue"<<endl;
-        cout<<"0:Back to main menu";
-        cin>>back;
+        std::cout<<"1:Continue"<<std::endl;
+        std::cout<<"0:Back to main menu";
+        std::cin>>back;
         if(back==0){
             interface();
         }
@@ -101,10 +100,10 @@ void bookreturn()
 {
     int n;
     book b;
-    cout<<"Enter Serial No. of book:"<<endl;
-    cin>>n;
-    fstream fout;
-    fout.open("Book.dat",ios::binary|ios::out|ios::in);
+    std::cout<<"Enter Serial No. of book:"<<std::endl;
+    std::cin>>n;
+    std::fstream fout;
+    fout.open("Book.dat",std::ios::binary|std::ios::out|std::ios::in);
     fout.read((char*)&b,sizeof(b));
 
     while(b.getsno()!=n)
@@ -114,14 +113,14 @@ void bookreturn()
 
     b.getreceive(0);
     b.getissue('N');
-    fout.seekg(-(int)sizeof(b),ios::cur);
+    fout.seekg(-(int)sizeof(b),std::ios::cur);
     fout.write((char*)&b,sizeof(b));
-    cout<<"Book is returned"<<endl;
+    std::cout<<"Book is returned"<<std::endl;
     fout.close();
 
     int back;
-    cout<<"1:Continue"<<endl;
-    cout<<"0:Back to main menu";
+    std::cout<<"1:Continue"<<std::endl;
+    std::cout<<"0:Back to main menu";
     cin>>back;
     if(back==0){
         interface();
@@ -135,12 +134,12 @@ void bookreturn()
 void sstatus()
 {
     int addmno;
-    cout<<"Enter the addmission No. of student:"<<endl;
-    cin>>addmno;
+    std::cout<<"Enter the addmission No. of student:"<<std::endl;
+    std::cin>>addmno;
     book b;
     student s;
-    fstream fout;
-    fout.open("Student.dat",ios::binary|ios::in);
+    std::fstream fout;
+    fout.open("Student.dat",std::ios::binary|std::ios::in);
     fout.read((char*)&s,sizeof(s));
 
     while(s.getaddmno()!=addmno)
@@ -151,8 +150,8 @@ void sstatus()
     s.sdisplay();
     fout.close();
     cout<<"Details of book issued:"<<endl;
-    fstream fin;
-    fin.open("Book.dat",ios::binary|ios::in);
+    std::fstream fin;
+    fin.open("Book.dat",std::ios::binary|std::ios::in);
     fin.read((char*)&b,sizeof(b));
 
     while(fin)
@@ -166,9 +165,9 @@ void sstatus()
 
     fin.close();
     int back;
-    cout<<"1:Continue"<<endl;
-    cout<<"0:Back to main menu";
-    cin>>back;
+    std::cout<<"1:Continue"<<std::endl;
+    std::cout<<"0:Back to main menu";
+    std::cin>>back;
     if(back==0){
         interface();
     }
@@ -181,12 +180,12 @@ void sstatus()
 void bstatus()
 {
     int sno;
-    cout<<"Enter serial No.:";
-    cin>>sno;
+    std::cout<<"Enter serial No.:";
+    std::cin>>sno;
     book b;
     student s;
-    fstream fin;
-    fin.open("Book.dat",ios::binary|ios::in);
+    std::fstream fin;
+    fin.open("Book.dat",std::ios::binary|std::ios::in);
     fin.read((char*)&b,sizeof(b));
 
     while(b.getsno()!=sno)
@@ -195,9 +194,9 @@ void bstatus()
     }
 
     b.bdisplay();
-    cout<<"The book is issued to:"<<endl;
+    cout<<"The book is issued to:"<<std::endl;
     fin.close();
-    fin.open("Student.dat",ios::binary|ios::in);
+    fin.open("Student.dat",std::ios::binary|std::ios::in);
     fin.read((char*)&s,sizeof(s));
 
     while(fin)
@@ -211,9 +210,9 @@ void bstatus()
     fin.close();
 
     int back;
-    cout<<"1:Continue"<<endl;
-    cout<<"0:Back to main menu";
-    cin>>back;
+    std::cout<<"1:Continue"<<std::endl;
+    std::cout<<"0:Back to main menu";
+    std::cin>>back;
     if(back==0){
         interface();
     }
@@ -224,14 +223,14 @@ void bstatus()
 
 void updatestudent()
 {
-    cout<<"Enter the Addmission No.:"<<endl;
+    std::cout<<"Enter the Addmission No.:"<<std::endl;
     int n;
-    cin>>n;
+    std::cin>>n;
     student s1,s2;
     book b;
     s1.sinput();
-    fstream fout;
-    fout.open("Student.dat",ios::binary|ios::out|ios::in);
+    std::fstream fout;
+    fout.open("Student.dat",std::ios::binary|std::ios::out|std::ios::in);
     fout.read((char*)&s2,sizeof(s2));
 
     while(s2.getaddmno()!=n)
@@ -239,10 +238,10 @@ void updatestudent()
         fout.read((char*)&s2,sizeof(s2));
     }
 
-    fout.seekg(-(int)sizeof(s2),ios::cur);
+    fout.seekg(-(int)sizeof(s2),std::ios::cur);
     fout.write((char*)&s1,sizeof(s1));
     fout.close();
-    fout.open("Book.dat",ios::binary|ios::out|ios::in);
+    fout.open("Book.dat",std::ios::binary|std::ios::out|std::ios::in);
     fout.read((char*)&b,sizeof(b));
 
     while(b.putreceive()!=s2.getaddmno())
@@ -255,9 +254,9 @@ void updatestudent()
     fout.write((char*)&b,sizeof(b));
 
     int back;
-    cout<<"1:Continue"<<endl;
-    cout<<"0:Back to main menu";
-    cin>>back;
+    std::cout<<"1:Continue"<<std::endl;
+    std::cout<<"0:Back to main menu";
+    std::cin>>back;
     if(back==0){
         interface();
     }
@@ -268,13 +267,13 @@ void updatestudent()
 
 void updatebook()
 {
-    cout<<"Enter the Serial No.:"<<endl;
+    std::cout<<"Enter the Serial No.:"<<std::endl;
     int n;
-    cin>>n;
+    std::cin>>n;
     book b1,b2;
     b1.binput();
-    fstream fin;
-    fin.open("Book.dat",ios::binary|ios::in|ios::out);
+    std::fstream fin;
+    fin.open("Book.dat",std::ios::binary|std::ios::in|std::ios::out);
     fin.read((char*)&b2,sizeof(b2));
 
     while(b2.getsno()!=n)
@@ -283,14 +282,14 @@ void updatebook()
     }
     b1.getreceive(b2.putreceive());
     b1.getissue(b2.putissue());
-    fin.seekg(-(int)sizeof(b2),ios::cur);
+    fin.seekg(-(int)sizeof(b2),std::ios::cur);
     fin.write((char*)&b1,sizeof(b1));
     fin.close();
 
     int back;
-    cout<<"1:Continue"<<endl;
-    cout<<"0:Back to main menu";
-    cin>>back;
+    std::cout<<"1:Continue"<<std::endl;
+    std::cout<<"0:Back to main menu";
+    std::cin>>back;
     if(back==0)
     {
     interface();

@@ -3,7 +3,6 @@
 #include<string>
 #include<ios>
 #include<limits>
-using namespace std;
 
 
 
@@ -16,11 +15,11 @@ book::book()
 
 void book::binput()
 {
-    cout<<"Enter book sno.:";
-    cin>>sno;
-    cout<<"Enter book name:";
-    cin.ignore(numeric_limits<streamsize>::max(),'\n');
-    getline(cin,bname);
+    std::cout<<"Enter book sno.:";
+    std::cin>>sno;
+    std::cout<<"Enter book name:";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+    std::getline(std::cin,bname);
 }
 
 void book::getreceive(int addmno)
@@ -35,10 +34,10 @@ int book::putreceive()
 
 void book::bdisplay()
 {
-    cout<<"---Details of book---"<<endl;
-    cout<<"Name:"<<bname<<endl;
-    cout<<"S.No.:"<<sno<<endl;
-    cout<<"ISSUE:"<<issue<<endl;
+    std::cout<<"---Details of book---"<<std::endl;
+    std::cout<<"Name:"<<bname<<std::endl;
+    std::cout<<"S.No.:"<<sno<<std::endl;
+    std::cout<<"ISSUE:"<<issue<<std::endl;
 }
 
 void book::getissue(char c)

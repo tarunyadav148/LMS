@@ -1,28 +1,27 @@
 #include"methods.h"
 #include<iostream>
-using namespace std;
 
 void interface()
 {
     if(system("clear")) system("cls");
 
-    cout<<"\t\tLibrary Management System"<<endl;
-    cout<<"\t\tKendriya Vidyalaya Aliganj Lucknow"<<endl;
+    std::cout<<"\t\tLibrary Management System"<<std::endl;
+    std::cout<<"\t\tKendriya Vidyalaya Aliganj Lucknow"<<std::endl;
     
     int choice;
 
-    cout<<"Enter your choice"<<endl;
-    cout<<"1:Enter Student data"<<endl;
-    cout<<"2:Enter Book data"<<endl;
-    cout<<"3:Issue a book"<<endl;
-    cout<<"4:Return a book"<<endl;
-    cout<<"5:Status of a book"<<endl;
-    cout<<"6:Status of student"<<endl;
-    cout<<"7:Upadate Student data"<<endl;
-    cout<<"8:Upate Book data"<<endl;
-    cout<<"0:Exit"<<endl;
+    std::cout<<"Enter your choice"<<std::endl;
+    std::cout<<"1:Enter Student data"<<std::endl;
+    std::cout<<"2:Enter Book data"<<std::endl;
+    std::cout<<"3:Issue a book"<<std::endl;
+    std::cout<<"4:Return a book"<<std::endl;
+    std::cout<<"5:Status of a book"<<std::endl;
+    std::cout<<"6:Status of student"<<std::endl;
+    std::cout<<"7:Upadate Student data"<<std::endl;
+    std::cout<<"8:Upate Book data"<<std::endl;
+    std::cout<<"0:Exit"<<std::endl;
 
-    cin>>choice;
+    std::cin>>choice;
 
     switch(choice)
     {
@@ -53,6 +52,6 @@ void interface()
         case 8:
         updatebook();
         break;
-        default:cout<<"Please enter mention value only"<<endl;
+        default:std::cout<<"Please enter mention value only"<<std::endl;
     }
 }
