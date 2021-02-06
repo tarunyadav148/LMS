@@ -1,5 +1,5 @@
-LMS: main.o interface.o student.o book.o methods.o
-	g++ main.o interface.o student.o book.o methods.o -o LMS
+LMS: main.o interface.o student.o book.o methods.o first_time.o college.o
+	g++ main.o interface.o student.o book.o methods.o first_time.o college.o -o LMS
 
 main.o: main.cpp
 	g++ -c main.cpp
@@ -15,6 +15,12 @@ book.o: book.cpp
 
 methods.o: methods.cpp
 	g++ -c methods.cpp
+
+first_time.o: first_time.cpp
+	g++ -c first_time.cpp
+
+college.o: college.cpp
+	g++ -c college.cpp
 
 clean:
 	rm *.o LMS *.dat

@@ -1,6 +1,6 @@
-#include"interface.h"
+#include"first_time.h"
 
 int main()
 {
-    interface();
+    first_time();
 }
